@@ -13,6 +13,7 @@ header{
     padding: 20px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -21,10 +22,35 @@ a{
     color: white;
 }
 
-input{
-    border-radius: 10px;
-    width: 40%;
-    height: 20px;
+.buscador{
+    display: flex;
+    width: 50%;
+    margin: 0;
+}
+
+#lector{
+    padding: 10px;
+    border-radius: 0px;
+    width: 400px;
+    margin: 0;
+    border: none;
+}
+.buscador #categoria{
+    background-color: #F5F0F6;
+    color:gray;
+    padding: 9px;
+    margin: 0;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#lector:focus .buscador{
+    border: 10px solid yellow;
+}
+
+#boton_buscar{
+    background-color: #D7B377;
+    padding: 9px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 footer{
