@@ -45,7 +45,7 @@ a{
 
 #categoria:hover{
     background-color: #dedcdf;
-    
+
 }
 
 #boton_buscar{
@@ -57,12 +57,13 @@ a{
 }
 
 #boton_buscar:hover{
-    background-color: #b6a484;
+    background-color: #c4974a;
     color: #ffffff;
 }
 
 #ubicacion i{
     margin: 5px;
+    font-size: 30px;
 }
 
 #ubicacion:hover{
