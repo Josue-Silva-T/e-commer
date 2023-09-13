@@ -19,12 +19,11 @@ header{
 
 a{
     text-decoration: none;
-    color: white;
+    color: #F5F0F6;
 }
 
 .buscador{
     display: flex;
-    width: 50%;
     margin: 0;
 }
 
@@ -34,8 +33,9 @@ a{
     width: 400px;
     margin: 0;
     border: none;
+    outline: none;
 }
-.buscador #categoria{
+#categoria{
     background-color: #F5F0F6;
     color:gray;
     padding: 9px;
@@ -43,14 +43,40 @@ a{
     border-radius: 5px 0px 0px 5px;
 }
 
-#lector:focus .buscador{
-    border: 10px solid yellow;
+#categoria:hover{
+    background-color: #dedcdf;
+    
 }
 
 #boton_buscar{
+    display: flex;
+    align-items: center;
     background-color: #D7B377;
     padding: 9px;
     border-radius: 0px 5px 5px 0px;
+}
+
+#boton_buscar:hover{
+    background-color: #b6a484;
+    color: #ffffff;
+}
+
+#ubicacion i{
+    margin: 5px;
+}
+
+#ubicacion:hover{
+    color: #ffffff;
+}
+
+#carrito{
+
+    font-size: 25px;
+    color: #F5F0F6;
+}
+
+#carrito:hover{
+    color: #ffffff;
 }
 
 footer{
