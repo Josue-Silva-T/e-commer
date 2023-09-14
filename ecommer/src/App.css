@@ -1,0 +1,83 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.inicio{
+  height: 400px;
+  background-color: #F5F0F6;
+}
+
+.header{
+  background-color: #385F71;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+a{
+  text-decoration: none;
+  color: #F5F0F6;
+}
+
+.buscador{
+  display: flex;
+  margin: 0;
+}
+
+.lector{
+  padding: 10px;
+  border-radius: 0px;
+  width: 400px;
+  margin: 0;
+  border: none;
+  outline: none;
+}
+.categoria{
+  background-color: #F5F0F6;
+  color:gray;
+  padding: 9px;
+  margin: 0;
+  border-radius: 5px 0px 0px 5px;
+  transition: 300ms;
+}
+
+.categoria:hover{
+  background-color: #dedcdf;
+
+}
+
+.boton_buscar{
+  display: flex;
+  align-items: center;
+  background-color: #D7B377;
+  padding: 9px;
+  border-radius: 0px 5px 5px 0px;
+  transition: 300ms;
+}
+
+.boton_buscar:hover{
+  background-color: #c4974a;
+  color: #ffffff;
+}
+
+.ubicacion FaLocationDot{
+  margin: 5px;
+  font-size: 20px;
+}
+
+.ubicacion:hover{
+  color: #ffffff;
+}
+
+.carrito{
+  font-size: 25px;
+  color: #F5F0F6;
+  transition: 300ms;
+}
+
+.carrito:hover{
+  color: #ffffff;
+}
