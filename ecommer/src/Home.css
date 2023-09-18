@@ -1,19 +1,40 @@
 .home{
-    height: 100000px;
+    height: 520px;
+    margin: 0px 0px 0px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
-img{
-    width: 100%;
+
+.home img{
+    width: 40em;
+    height: 20em;
+    filter: drop-shadow(30px 10px 30px #000000);
+    transition: 0.5s;
+}
+
+.home img:hover{
+    width: 42em;
+    height: 22em;
+}
+
+.home h1{
+    font-size: 100px;
+    color: white;
+    text-shadow: 10px 10px 30px #000000;
 }
 
 body{
     background-image: url(img/prime.png);
+    background-repeat: no-repeat;
 }
 
 @media 
   (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 192dpi) { 
+  (min-resolution: 100dpi) { 
   body {
-    background-image: url(img/PRIME-X.png);
+    background-image: url(img/BestGlasses.png);
+    background-repeat: no-repeat;
   }
 }
 

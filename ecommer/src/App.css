@@ -43,6 +43,7 @@ a {
 
 .categoria {
   background-color: #F5F0F6;
+  padding: 5px;
   color: gray;
   padding: 10px;
   margin: 0;
@@ -70,12 +71,30 @@ a {
   color: #ffffff;
 }
 
+.logotipo{
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.logotipo:hover{
+  background-color: rgba(80, 80, 80, 0.205);
+  color: #ffffff;
+}
+
 .ubicacion FaLocationDot {
   margin: 5px;
   font-size: 20px;
 }
 
+.ubicacion{
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
 .ubicacion:hover {
+  background-color: rgba(80, 80, 80, 0.205);
   color: #ffffff;
 }
 
@@ -83,9 +102,13 @@ a {
   font-size: 25px;
   color: #F5F0F6;
   transition: 300ms;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.5s;
 }
 
 .carrito:hover {
+  background-color: rgba(80, 80, 80, 0.205);
   color: #ffffff;
 }
 
