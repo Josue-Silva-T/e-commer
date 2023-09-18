@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .inicio {
@@ -10,12 +11,15 @@
 
 .header {
   background-color: #385F71;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  gap: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
+
 
 a {
   text-decoration: none;
@@ -23,14 +27,16 @@ a {
 }
 
 .buscador {
-  display: flex;
+  display: grid;
+  grid-template-columns: 2fr 4fr 0.5fr;
   margin: 0;
 }
 
 .lector {
   padding: 10px;
   border-radius: 0px;
-  width: 400px;
+  max-width: 800px;
+  min-width: 20%;
   margin: 0;
   border: none;
   outline: none;
@@ -39,10 +45,11 @@ a {
 .categoria {
   background-color: #F5F0F6;
   color: gray;
-  padding: 9px;
+  padding: 10px;
   margin: 0;
   border-radius: 5px 0px 0px 5px;
   transition: 300ms;
+  border: none;
 }
 
 .categoria:hover {
@@ -81,4 +88,25 @@ a {
 
 .carrito:hover {
   color: #ffffff;
+}
+
+@media (max-width: 832px) {
+  .header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(
+      150px,
+      1fr
+    ));
+    grid-template-rows: repeat(auto, auto);
+  }
+
+  .carrito {
+    position: absolute;
+    right: 4%;
+    top: 1.7%;
+  }
+
+  .buscador {
+    grid-column: 1 / 3;
+  }
 }
