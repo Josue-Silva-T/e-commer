@@ -99,10 +99,15 @@ a {
     ));
     grid-template-rows: repeat(auto, auto);
   }
+  .ubicacion {
+    position: absolute;
+    top: 1.9%;
+    left: 35%;
+  }
 
   .carrito {
     position: absolute;
-    right: 4%;
+    right: 5%;
     top: 1.7%;
   }
 
