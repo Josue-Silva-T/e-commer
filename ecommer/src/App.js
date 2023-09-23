@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Struct } from './Componentes/Struct.component';
-import { Home } from './Componentes/Home.component';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Struct } from './Componentes/Struct_component/Struct.component';
+import { Home } from './Componentes/Home_component/Home.component';
+import { CarritoCompras } from './Componentes/CarritoCompras_component/CarritoCompras.component';
 
-
-class App extends Component {
-  render() {
-    return (<div>
-        <Struct/>
-        <Home/>
-      </div>
-    );
-  }
+const App = () => {
+  return (
+    <Router>
+      <Struct />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/carrito" element={<CarritoCompras />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;

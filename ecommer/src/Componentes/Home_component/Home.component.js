@@ -1,6 +1,6 @@
 import React from 'react';
-import lentes from '../img/lentes.webp';
-import '../HojasEstilo/Home.styles.css';
+import lentes from '../../img/lentes.webp';
+import './Home.component.css';
 
 
 

@@ -25,7 +25,7 @@
 }
 
 body{
-    background-image: url(../img/prime.webp);
+    background-image: url(../../img/prime.webp);
     background-repeat: no-repeat;
 }
 
@@ -33,7 +33,7 @@ body{
   (-webkit-min-device-pixel-ratio: 2), 
   (min-resolution: 100dpi) { 
   body {
-    background-image: url(../img/BestGlasses.webp);
+    background-image: url(../../img/BestGlasses.webp);
     background-repeat: no-repeat;
   }
 }

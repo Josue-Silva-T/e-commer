@@ -1,0 +1,2 @@
+Aqui van funciones que creas se pueden estar repitiendo en varios lugares
+evitamos la concurrencia
