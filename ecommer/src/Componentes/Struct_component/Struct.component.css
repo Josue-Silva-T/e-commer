@@ -17,11 +17,12 @@
   
   .buscador {
     display: grid;
-    grid-template-columns: 2fr 4fr 0.5fr;
+    grid-template-columns: 24% 30% 30% 10%;
     margin: 0;
   }
   
   .lector {
+    grid-column: 2 / 4;
     padding: 10px;
     border-radius: 0px;
     max-width: 800px;
@@ -32,6 +33,7 @@
   }
   
   .categoria {
+    grid-column: 1 / 2;
     background-color: #F5F0F6;
     color: gray;
     padding: 10px;

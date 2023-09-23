@@ -1,0 +1,46 @@
+.contenedor-carrito {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 5% auto 30px auto;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carrito_item {
+    display: block;
+    position: relative;
+    padding: 20px;
+    padding-bottom: 0;
+    max-height: 200px;
+    min-height: 150px;
+    border: 1px solid #ddd;
+}
+
+.carrito-productoCantidades {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #999;
+}
+
+.cotenedor_botones {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: -5px auto 50px auto;
+}
+
+.boton-comprar {
+    position: relative;
+    top: 0;
+    left: 85%;
+}
+
+@media (max-width: 980px) {
+    .contenedor-carrito {
+        width: 90%;
+    }
+
+    .boton-comprar {
+        left: 0;
+    }
+}
