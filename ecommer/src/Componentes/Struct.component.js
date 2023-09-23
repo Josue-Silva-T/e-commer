@@ -1,4 +1,5 @@
 import React from 'react';
+import '../HojasEstilo/Struct.styles.css';
 import { FaSistrix, FaCartShopping, FaLocationDot } from "react-icons/fa6";
 
 export function Struct() {

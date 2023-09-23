@@ -1,0 +1,2 @@
+En esta carpeta se crean conexiones con el backend, cualquier peticion
+ponla aqui, esto para separar la logica de los componentes de la vista de los componentes

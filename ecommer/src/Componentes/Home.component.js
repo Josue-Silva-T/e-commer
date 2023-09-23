@@ -1,6 +1,8 @@
 import React from 'react';
-import './Home.css';
-import lentes from './img/lentes.png';
+import lentes from '../img/lentes.webp';
+import '../HojasEstilo/Home.styles.css';
+
+
 
 export function Home(){
     return <div className="home">
