@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { comprasCarrito } from '../../Servicios/elementosCarrito';
 import './CarritoCompras.component.css';
 import '../../Utileria/botones.css';
+import '../../Utileria/normalize.css';
 
 export function CarritoCompras() {
     const [comprasEnCarrito, setComprasEnCarrito] = useState([]);

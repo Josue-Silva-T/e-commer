@@ -2,6 +2,7 @@ import React from 'react';
 import { FaSistrix, FaCartShopping, FaLocationDot } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import './Struct.component.css';
+import '../../Utileria/normalize.css';
 
 export function Struct() {
   return (

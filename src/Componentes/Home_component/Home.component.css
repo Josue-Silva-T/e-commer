@@ -1,24 +1,24 @@
-.home{
+.background{
     height: 520px;
-    margin: 0px 0px 0px 100px;
+    margin: 0px 0px 100px 100px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
-.home img{
+.background img{
     width: 40em;
     height: 20em;
     filter: drop-shadow(30px 10px 30px #000000);
     transition: 0.5s;
 }
 
-.home img:hover{
+.background img:hover{
     width: 42em;
     height: 22em;
 }
 
-.home h1{
+.background h1{
     font-size: 100px;
     color: white;
     text-shadow: 10px 10px 30px #000000;
@@ -36,8 +36,21 @@
     background-image: url(../../img/BestGlasses.webp);
     background-repeat: no-repeat;
   }
-  #background, #title {
+  #image, #title {
     display: none;
   }
 } 
+
+.slider{
+    background-color: #f2f2f2;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.slider img{
+  margin-top: 50px;
+  padding: 20px;
+  width: 300px;
+}
 
