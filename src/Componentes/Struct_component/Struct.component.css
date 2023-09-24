@@ -1,14 +1,13 @@
 .header {
-    background-color: #385F71;
+    background-color: transparent;
     padding: 15px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
-    width: 100%;
+    width: 97%;
   }
-  
   
   a {
     text-decoration: none;
@@ -66,19 +65,29 @@
     margin: 5px;
     font-size: 20px;
   }
+
+  .ubicacion {
+    transition: 300ms;
+    padding: 10px;
+    border-radius: 10px;
+  }
   
   .ubicacion:hover {
     color: #ffffff;
+    background-color: rgba(49, 49, 49, 0.37);
   }
   
   .carrito {
     font-size: 25px;
     color: #F5F0F6;
     transition: 300ms;
+    padding: 10px;
+    border-radius: 10px;
   }
   
   .carrito:hover {
     color: #ffffff;
+    background-color: rgba(49, 49, 49, 0.37);
   }
   
   @media (max-width: 832px) {
