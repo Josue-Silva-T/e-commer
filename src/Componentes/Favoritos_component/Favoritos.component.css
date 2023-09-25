@@ -1,0 +1,28 @@
+.contenedor_favoritos {
+    display: block;
+    width: 95%;
+    margin: 3% auto;
+    height: auto;
+    border: 1px solid #aaa;
+}
+
+.favoritos_titulo {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.favoritos_items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favoritos-item {
+    flex-grow: 1;
+    display: block;
+    border: 1px solid #ccc;
+    max-height: 100%;
+    width: max-content;
+    
+}
