@@ -3,26 +3,27 @@
     width: 95%;
     margin: 3% auto;
     height: auto;
-    border: 1px solid #aaa;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
 .favoritos_titulo {
     display: block;
     width: 100%;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    padding-top: 5px;
 }
 
 .favoritos_items {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch; 
 }
 
 .favoritos-item {
     flex-grow: 1;
     display: block;
-    border: 1px solid #ccc;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+    padding: 5px;
     max-height: 100%;
-    width: max-content;
-    
+    min-width: 20%;
 }

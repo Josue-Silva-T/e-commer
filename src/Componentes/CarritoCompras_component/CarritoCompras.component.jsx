@@ -61,11 +61,11 @@ export function CarritoCompras() {
                     ))}
                 </div>
 
-                <article>
+                <article className='contenedor_pago'>
                     <h2>Total a pagar: {totalPagar}</h2>
                     <ul>
                         {comprasEnCarrito.map((compra, index) => (
-                            <li key={"compra" + index}>
+                            <li key={"compra" + index} className='pago-item'>
                                 <strong>{compra.titulo}</strong>: {compra.precio * compra.cantidad}
                             </li>
                         ))}
