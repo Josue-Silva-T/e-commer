@@ -1,5 +1,7 @@
 import React from "react";
-import "./VerificarCarrito.css";
+import "./VerificarCarrito.component.css";
+import PropTypes from 'prop-types';
+
 
 export function VerificarCarrito({ id, titulo, descripcion, precio, cantidad, comprasEnCarrito, setComprasEnCarrito }) {
 
@@ -38,3 +40,13 @@ export function VerificarCarrito({ id, titulo, descripcion, precio, cantidad, co
         </div>
     );
 }
+
+
+VerificarCarrito.propTypes = {
+    id : PropTypes.number.isRequired,
+    titulo : PropTypes.string.isRequired,
+    descripcion : PropTypes.string.isRequired,
+    cantidad : PropTypes.number.isRequired,
+    comprasEnCarrito: PropTypes.array.isRequired, 
+    setComprasEnCarrito: PropTypes.func.isRequired 
+};

@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { comprasCarrito } from '../../Servicios/elementosCarrito';
-import { favoritos } from '../../Servicios/favoritos.service';
+
+//Servicios
+import { favoritos } from '../../../Servicios/favoritos.service';
+import { comprasCarrito } from '../../../Servicios/elementosCarrito';
+
+//Css
 import './CarritoCompras.component.css';
-import '../../Utileria/botones.css';
+import '../../../Utileria/botones.css';
+import '../../../Utileria/normalize.css';
+
+//Componentes
 import { MostrarProductos } from '../Favoritos_component/Favoritos.component';
-import '../../Utileria/normalize.css';
-import { VerificarCarrito } from '../VerificarCarrito/VerificarCarrito';
+import { VerificarCarrito } from '../VerificarCarrito/VerificarCarrito.component';
+import { TotalPagar } from '../TotalPagar_component/TotalPagar.component';
+
+
 
 export function CarritoCompras() {
     const [comprasEnCarrito, setComprasEnCarrito] = useState([]);
@@ -16,21 +24,6 @@ export function CarritoCompras() {
         setComprasEnCarrito(comprasCarrito);
         setFavorito(favoritos);
     }, []);
-
-    const manejarCantidadesCompra = (id, cantidad) => {
-        if (cantidad >= 0) {
-            const comprasActualizadas = comprasEnCarrito.map(compra => {
-                if (compra.id === id) {
-                    return {
-                        ...compra,
-                        cantidad: Number(cantidad)
-                    };
-                }
-                return compra;
-            });
-            setComprasEnCarrito(comprasActualizadas);
-        }
-    };
 
     const totalPagar = comprasEnCarrito.reduce((total, compra) => {
         return total + compra.precio * compra.cantidad;
@@ -64,7 +57,11 @@ export function CarritoCompras() {
                     <ul>
                         {comprasEnCarrito.map((compra, index) => (
                             <li key={"compra" + index} className='pago-item'>
-                                <strong>{compra.titulo}</strong>: {compra.precio * compra.cantidad}
+                                <TotalPagar
+                                    titulo={compra.titulo}
+                                    precio={compra.precio}
+                                    cantidad={compra.cantidad}
+                                />
                             </li>
                         ))}
                     </ul>
@@ -95,19 +92,3 @@ export function CarritoCompras() {
         </div>
     );
 }
-
-CarritoCompras.propTypes = {
-    comprasEnCarrito: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number,
-            titulo: PropTypes.string,
-            descripcion: PropTypes.string,
-            precio: PropTypes.number,
-            cantidad: PropTypes.number
-        })
-    )
-};
-
-CarritoCompras.defaultProps = {
-    comprasEnCarrito: []
-};

@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import './Favoritos.component.css';
 
@@ -17,3 +16,11 @@ export function MostrarProductos({ nombre, precio, estado }) {
         </div>
     )
 } 
+
+MostrarProductos.propTypes = {
+    nombre : PropTypes.string.isRequired,
+    precio : PropTypes.number.isRequired,
+    estado : PropTypes.bool
+}
+
+
