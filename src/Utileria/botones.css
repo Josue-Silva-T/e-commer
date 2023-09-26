@@ -15,6 +15,10 @@
     background-color: rgba(0,0,0, 0.8);
 }
 
+.boton:active {
+    background-color: rgba(0,0,0, 0.5);
+}
+
 @media (max-width: 980px) {
     .boton {
         width: 100%;

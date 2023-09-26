@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { comprasCarrito } from '../../Servicios/elementosCarrito';
+import { favoritos } from '../../Servicios/favoritos.service';
 import './CarritoCompras.component.css';
 import '../../Utileria/botones.css';
-import { Favoritos } from '../Favoritos_component/Favoritos.component';
+import { MostrarProductos } from '../Favoritos_component/Favoritos.component';
 import '../../Utileria/normalize.css';
 
 export function CarritoCompras() {
     const [comprasEnCarrito, setComprasEnCarrito] = useState([]);
+    const [favorito, setFavorito] = useState([]);
 
     useEffect(() => {
         setComprasEnCarrito(comprasCarrito);
+        setFavorito(favoritos);
     }, []);
 
     const manejarCantidadesCompra = (id, cantidad) => {
@@ -70,11 +73,30 @@ export function CarritoCompras() {
                             </li>
                         ))}
                     </ul>
-                    <button className="boton boton-comprar">Comprar</button>
+                    <button className="boton boton-comprar" disabled={totalPagar === 0}>Comprar</button>
+
+
+
                 </article>
             </section>
 
-            <Favoritos />
+            <section className='contenedor_favoritos'>
+                <div className='favoritos_titulo'>
+                    <h2>Favoritos</h2>
+                </div>
+
+                <div className='favoritos_items'>
+                    {favorito.map((fav, index) => (
+                        <MostrarProductos
+                            key={"favorito" + index}
+                            nombre={fav.nombre}
+                            precio={fav.precio}
+                            estado={fav.estado}
+                        />
+                    ))}
+                </div>
+            </section>
+
         </div>
     );
 }
