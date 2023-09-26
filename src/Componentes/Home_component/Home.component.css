@@ -54,3 +54,13 @@
   width: 300px;
 }
 
+.slide{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.swiper {
+  width: 90%;
+}
+
