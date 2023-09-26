@@ -12,21 +12,7 @@
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-.carrito_item {
-    display: block;
-    position: relative;
-    padding: 20px;
-    padding-bottom: 0;
-    max-height: 200px;
-    min-height: 150px;
-    border: 1px solid #ddd;
-}
 
-.carrito-productoCantidades {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #999;
-}
 
 
 .boton-comprar {

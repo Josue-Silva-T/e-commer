@@ -6,6 +6,7 @@ import './CarritoCompras.component.css';
 import '../../Utileria/botones.css';
 import { MostrarProductos } from '../Favoritos_component/Favoritos.component';
 import '../../Utileria/normalize.css';
+import { VerificarCarrito } from '../VerificarCarrito/VerificarCarrito';
 
 export function CarritoCompras() {
     const [comprasEnCarrito, setComprasEnCarrito] = useState([]);
@@ -43,23 +44,17 @@ export function CarritoCompras() {
         <div>
             <section className="contenedor">
                 <div className="contenedor-carrito">
-                    {comprasEnCarrito.map(compra => (
-                        <div className="carrito_item" key={compra.id}>
-                            <div className="carrito-productoNombre">
-                                <h2>{compra.titulo}</h2>
-                            </div>
-                            <div className="carrito-productoDescripcion">
-                                <p>{compra.descripcion}</p>
-                            </div>
-                            <div className="carrito-productoCantidades">
-                                <p>${compra.precio * compra.cantidad}</p>
-                                <input
-                                    type="number"
-                                    placeholder="Cantidad"
-                                    value={compra.cantidad || ''}
-                                    onChange={e => manejarCantidadesCompra(compra.id, e.target.value)}
-                                />
-                            </div>
+                    {comprasEnCarrito.map((compra, index) => (
+                        <div key={"carrito" + index}>
+                            <VerificarCarrito
+                                id={compra.id}
+                                titulo={compra.titulo}
+                                descripcion={compra.descripcion}
+                                precio={compra.precio}
+                                cantidad={compra.cantidad}
+                                comprasEnCarrito={comprasEnCarrito}
+                                setComprasEnCarrito={setComprasEnCarrito}
+                            />
                         </div>
                     ))}
                 </div>
