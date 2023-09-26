@@ -23,7 +23,9 @@ const App = () => {
 
 
       </Routes>
-      <Footer/>
+      {/* <Footer/> 
+        Comentado temporalmente en lo que se implementa
+      */}
     </Router>
   );
 }
