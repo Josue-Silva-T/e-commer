@@ -1,56 +1,40 @@
 .header {
-    background-color: transparent;
-    padding: 15px;
+    background-color: var(--Color-primario);
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    width: 97%;
+    width: 100vw;
+    box-shadow: 0px 3px 15px #7c7c7c;
   }
   
-  .header a {
-    text-decoration: none;
-    color: #F5F0F6;
-  }
+.header a {
+  text-decoration: none;
+  color: white;
+}
+
+.logotipo{
+  margin: 20px 0px 0px 0px;
+  font-size: 40px;
+  font-family: var(--Fuente-titulo);
+}
   
-  .buscador {
-    display: grid;
-    grid-template-columns: 24% 30% 30% 10%;
-    margin: 0;
-  }
+.buscador {
+  display: flex;
+  align-items: center;
+}
   
-  .lector {
-    grid-column: 2 / 4;
-    padding: 10px;
-    border-radius: 0px;
-    max-width: 800px;
-    min-width: 20%;
-    margin: 0;
-    border: none;
-    outline: none;
-  }
-  
-  .categoria {
-    grid-column: 1 / 2;
-    background-color: #F5F0F6;
-    color: gray;
-    padding: 10px;
-    margin: 0;
-    border-radius: 5px 0px 0px 5px;
-    transition: 300ms;
-    border: none;
-  }
-  
-  .categoria:hover {
-    background-color: #dedcdf;
-  
-  }
-  
+.lector {
+  padding: 10px;
+  border-radius: 0px;
+  border: none;
+  outline: none;
+  border-radius: 5px 0px 0px 5px;
+  width: 500px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
   .boton_buscar {
-    display: flex;
-    align-items: center;
-    background-color: #D7B377;
+    background-color: var(--Color-terciario);
     padding: 9px;
     border-radius: 0px 5px 5px 0px;
     transition: 300ms;
@@ -60,34 +44,17 @@
     background-color: #c4974a;
     color: #ffffff;
   }
-  
-  .ubicacion FaLocationDot {
-    margin: 5px;
-    font-size: 20px;
-  }
-
-  .ubicacion {
-    transition: 300ms;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  
-  .ubicacion:hover {
-    color: #ffffff;
-    background-color: rgba(49, 49, 49, 0.37);
-  }
-  
   .carrito {
     font-size: 25px;
     color: #F5F0F6;
     transition: 300ms;
     padding: 10px;
-    border-radius: 10px;
   }
-  
-  .carrito:hover {
-    color: #ffffff;
-    background-color: rgba(49, 49, 49, 0.37);
+  .User {
+    font-size: 25px;
+    color: #F5F0F6;
+    transition: 300ms;
+    padding: 10px;
   }
   
   @media (max-width: 832px) {
@@ -99,19 +66,10 @@
       ));
       grid-template-rows: repeat(auto, auto);
     }
-    .ubicacion {
-      position: absolute;
-      top: 1.9%;
-      left: 35%;
-    }
   
     .carrito {
       position: absolute;
       right: 5%;
       top: 1.7%;
-    }
-  
-    .buscador {
-      grid-column: 1 / 3;
     }
   }
