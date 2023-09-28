@@ -1,51 +1,31 @@
 .background{
-    height: 520px;
-    margin: 0px 0px 100px 100px;
+    height: 400px;
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
 }
 
 .background img{
-    width: 40em;
-    height: 20em;
-    filter: drop-shadow(30px 10px 30px #000000);
-    transition: 0.5s;
+    width: 1262px;
+    height: 325px;
+    box-shadow: 0px 3px 15px #7c7c7c;
 }
 
-.background img:hover{
-    width: 42em;
-    height: 22em;
-}
-
-.background h1{
-    font-size: 100px;
+h2{
+    font-family: var(--Fuente-parrafo);
+    font-size: 30px;
     color: white;
-    text-shadow: 10px 10px 30px #000000;
+    text-align: center;
+    text-shadow: 0px 3px 15px #7c7c7c;
 }
 
  body{
-    background-image: url(../../img/prime.webp);
-    background-repeat: no-repeat;
-} 
-
- @media 
-  (-webkit-min-device-pixel-ratio: 2), 
-  (min-resolution: 100dpi) { 
-  body {
-    background-image: url(../../img/BestGlasses.webp);
-    background-repeat: no-repeat;
-  }
-  #image, #title {
-    display: none;
-  }
+  background-color: var(--Color-secundario);
 } 
 
 .slider{
     background-color: #f2f2f2;
     height: 300px;
-    display: flex;
-    align-items: center;
 }
 
 .slider img{
@@ -54,7 +34,7 @@
   width: 300px;
 }
 
-.slide{
+.slide {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

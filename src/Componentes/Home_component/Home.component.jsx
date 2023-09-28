@@ -1,5 +1,4 @@
 import React from 'react';
-import lentes from '../../img/lentes.webp';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import './Home.component.css';
 import '../../Utileria/normalize.css';
@@ -8,9 +7,9 @@ import 'swiper/css';
 export function Home(){
     return <div className="home">
         <div className="background">
-        <h1 id="title">PRIME</h1>
-        <img src={lentes} alt='Glasses' id="image"></img>
+            <img src={require('../../img/online shop.png')} alt="" />
         </div>
+        <h2>Lo mas vendido</h2>
         <div className="content">
             <div className="slider">
                 <Swiper

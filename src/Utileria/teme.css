@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Katibeh&family=Playfair+Display&display=swap');
+
+:root{
+    --Fuente-titulo: 'Katibeh', cursive;
+    --Fuente-parrafo: 'Playfair Display', serif;
+    --Color-primario: #88ABBE;
+    --Color-secundario: #CDCDCD;
+    --Color-terciario: #D7B377;
+}
+
