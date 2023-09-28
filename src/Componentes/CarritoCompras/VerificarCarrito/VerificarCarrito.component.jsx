@@ -1,6 +1,7 @@
 import React from "react";
 import "./VerificarCarrito.component.css";
 import PropTypes from 'prop-types';
+import { InputNumero } from "../../../Utileria/Input_numero/Input_numero";
 
 
 export function VerificarCarrito({ id, titulo, descripcion, precio, cantidad, comprasEnCarrito, setComprasEnCarrito }) {
@@ -30,11 +31,9 @@ export function VerificarCarrito({ id, titulo, descripcion, precio, cantidad, co
             </div>
             <div className="carrito-productoCantidades">
                 <p>${precio * cantidad}</p>
-                <input
-                    type="number"
-                    placeholder="Cantidad"
-                    value={cantidad || ''}
-                    onChange={e => manejarCantidadesCompra(e.target.value)}
+                <InputNumero
+                    valor={cantidad}
+                    setValor={manejarCantidadesCompra}
                 />
             </div>
         </div>

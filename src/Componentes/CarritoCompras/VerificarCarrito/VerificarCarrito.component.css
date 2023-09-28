@@ -13,3 +13,7 @@
     justify-content: space-between;
     border-top: 1px solid #999;
 }
+
+.carrito-productoCantidades input {
+    border: none;
+}

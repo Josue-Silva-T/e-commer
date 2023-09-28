@@ -1,0 +1,19 @@
+.contenedor_boton {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.boton-numero {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.flechas-item {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
