@@ -16,6 +16,11 @@
   margin: 20px 0px 0px 0px;
   font-size: 40px;
   font-family: var(--Fuente-titulo);
+  transition: 300ms;
+}
+
+.logotipo:hover{
+  text-shadow: rgb(60, 57, 90) 1px 1px 8px;
 }
   
 .buscador {
@@ -55,6 +60,10 @@
     color: #F5F0F6;
     transition: 300ms;
     padding: 10px;
+  }
+
+  .User:hover, .carrito:hover {
+    color: rgb(219, 219, 219);
   }
   
   @media (max-width: 832px) {
