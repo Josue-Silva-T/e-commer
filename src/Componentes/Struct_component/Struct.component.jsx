@@ -10,7 +10,7 @@ export function Struct() {
     <div className='header'>
       <Link className="logotipo" to='/'>PRIME</Link>
       <div className="buscador">
-        <input className='lector' type='text' placeholder='Buscar en prime' />
+        <input className='lector' type='text' spellcheck="false" placeholder='Buscar en prime' />
         <Link to='#' className="boton_buscar">< FaSistrix /></Link>
       </div>
       <div className="buttons">
