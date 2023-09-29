@@ -32,6 +32,7 @@ export function VerificarCarrito({ id, titulo, descripcion, precio, cantidad, co
             <div className="carrito-productoCantidades">
                 <p>${precio * cantidad}</p>
                 <InputNumero
+                    className="productoCantidades-entrada"
                     valor={cantidad}
                     setValor={manejarCantidadesCompra}
                 />
