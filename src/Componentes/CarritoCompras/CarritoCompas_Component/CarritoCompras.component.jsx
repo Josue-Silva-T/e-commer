@@ -7,6 +7,7 @@ import '../../../Utileria/normalize.css';
 import { MostrarProductos } from '../Favoritos_component/Favoritos.component';
 import { VerificarCarrito } from '../VerificarCarrito/VerificarCarrito.component';
 import { TotalPagar } from '../TotalPagar_component/TotalPagar.component';
+import { Boton } from '../../../Utileria/Boton/Boton.component';
 
 export function CarritoCompras() {
   const [comprasEnCarrito, setComprasEnCarrito] = useState([]);
@@ -91,6 +92,11 @@ export function CarritoCompras() {
           {mostrarFavoritos()}
         </div>
       </section>
+
+        
+      <Boton 
+        valorBoton={"Probaremos el boton"}
+      />
     </div>
   );
 }
