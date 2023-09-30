@@ -29,3 +29,8 @@
     border-radius: 100%;
     z-index: 50;
 }
+
+.cursor-desactivado {
+    left: 50%;
+    top: 50%;
+}
