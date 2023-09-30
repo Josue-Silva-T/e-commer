@@ -7,11 +7,16 @@ export function Boton({ valorBoton }) {
     const divAnimacionOjo = useRef(null);
     const divAnimacionPupila = useRef(null);
 
+    let tl = gsap.timeline();
+
     const iniciarPupila = (e) => {
+        if(tl.isActive()) {
+            tl.kill(divAnimacionPupila);
+        }
         const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 51) / 100;
         const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 30) / 100;
 
-        gsap.from(divAnimacionPupila.current, {
+        tl.from(divAnimacionPupila.current, {
             x: anchoOjo,
             y: alturaOjo
         });
@@ -19,7 +24,6 @@ export function Boton({ valorBoton }) {
     }
 
     const mouseEnBoton = (e) => {
-        console.log('Mouse moviéndose sobre el botón');
 
         divAnimacionOjo.current.classList.add('seleccionado')
         divAnimacionPupila.current.classList.add('cursor')
@@ -32,6 +36,11 @@ export function Boton({ valorBoton }) {
 
         const coordenadaXRelativa = coordenadaXMouse;
         const coordenadaYRelativa = coordenadaYMouse - coordenadaYOjo;
+        
+        gsap.to(divAnimacionPupila.current, {
+            x: coordenadaXRelativa,
+            y: coordenadaYRelativa
+        });
 
         gsap.to(divAnimacionOjo.current, {
             top: 0,
@@ -39,10 +48,6 @@ export function Boton({ valorBoton }) {
             duration: 0.5
         })
 
-        gsap.to(divAnimacionPupila.current, {
-            x: coordenadaXRelativa,
-            y: coordenadaYRelativa
-        });
     }
 
     const mouseFueraBoton = () => {
@@ -64,7 +69,8 @@ export function Boton({ valorBoton }) {
         setTimeout(() => {
             divAnimacionOjo.current.classList.remove('seleccionado');
             divAnimacionPupila.current.classList.remove('cursor');
-        }, 1000)
+        }, 1000);
+
     }
 
 
@@ -74,8 +80,10 @@ export function Boton({ valorBoton }) {
     return (
         <button
             className="default"
+            onMouseEnter={iniciarPupila}
             onMouseMove={mouseEnBoton}
             onMouseLeave={mouseFueraBoton}
+            
         >
             {valorBoton}
             <div ref={divAnimacionOjo}>
