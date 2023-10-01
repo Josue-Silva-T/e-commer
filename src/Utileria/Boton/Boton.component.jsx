@@ -10,15 +10,16 @@ export function Boton({ valorBoton }) {
     let tl = gsap.timeline();
 
     const iniciarPupila = (e) => {
-        if(tl.isActive()) {
+        if (tl.isActive()) {
             tl.kill(divAnimacionPupila);
+            tl.kill(divAnimacionOjo);
         }
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 51) / 100;
-        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 30) / 100;
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.51);
+        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.30);
 
-        tl.from(divAnimacionPupila.current, {
+        gsap.from(divAnimacionPupila.current, {
             x: anchoOjo,
-            y: alturaOjo
+            y: 0
         });
 
     }
@@ -36,7 +37,7 @@ export function Boton({ valorBoton }) {
 
         const coordenadaXRelativa = coordenadaXMouse;
         const coordenadaYRelativa = coordenadaYMouse - coordenadaYOjo;
-        
+
         gsap.to(divAnimacionPupila.current, {
             x: coordenadaXRelativa,
             y: coordenadaYRelativa
@@ -51,25 +52,27 @@ export function Boton({ valorBoton }) {
     }
 
     const mouseFueraBoton = () => {
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 51) / 100;
-        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 30) / 100;
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.51);
+        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.30);
 
+        tl.startTime(1);
 
-        gsap.to(divAnimacionPupila.current, {
+        tl.to(divAnimacionPupila.current, {
             x: anchoOjo,
             y: alturaOjo
         });
 
-        gsap.to(divAnimacionOjo.current, {
-            top : "50%",
+        tl.to(divAnimacionOjo.current, {
+            top: "50%",
             height: 0,
-            duration: 0.5
+            duration: 0.5,
+            delay : 0
         })
 
-        setTimeout(() => {
-            divAnimacionOjo.current.classList.remove('seleccionado');
-            divAnimacionPupila.current.classList.remove('cursor');
-        }, 1000);
+        tl.to(divAnimacionPupila.current, {
+            duration: 0.5,
+            delay : 0
+        })
 
     }
 
@@ -83,7 +86,7 @@ export function Boton({ valorBoton }) {
             onMouseEnter={iniciarPupila}
             onMouseMove={mouseEnBoton}
             onMouseLeave={mouseFueraBoton}
-            
+
         >
             {valorBoton}
             <div ref={divAnimacionOjo}>
