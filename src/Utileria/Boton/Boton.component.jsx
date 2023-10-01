@@ -10,16 +10,16 @@ export function Boton({ valorBoton, accion }) {
     let tl = gsap.timeline();
 
     const iniciarPupila = () => {
-        if (tl.isActive()) {
+        if (tl.isActive()) { //En caso de estarse ejecutando la animacion de cerrar ojo, la eliminamos
             tl.kill(divAnimacionPupila);
             tl.kill(divAnimacionOjo);
         }
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.47);
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.385); //La multiplicacion sirve para ajustar en base al porrcentaje del css
         const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.1);
 
         gsap.from(divAnimacionPupila.current, {
             x: anchoOjo,
-            y: 0
+            y: alturaOjo
         });
 
         gsap.to(divAnimacionOjo.current, {
@@ -31,32 +31,27 @@ export function Boton({ valorBoton, accion }) {
     }
 
     const mouseEnBoton = (e) => {
-
-        divAnimacionOjo.current.classList.add('seleccionado')
-        divAnimacionPupila.current.classList.add('cursor')
-
-        const coordenadaYOjo = divAnimacionOjo.current.getBoundingClientRect().top;
-        const coordenadaXPupila = divAnimacionPupila.current.getBoundingClientRect().width / 4;
-
-
-        const coordenadaXMouse = e.clientX;
-        const coordenadaYMouse = e.clientY;
-
-        const coordenadaXRelativa = coordenadaXMouse - coordenadaXPupila;
-        const coordenadaYRelativa = coordenadaYMouse - coordenadaYOjo;
-
+        // Obtén las coordenadas del botón
+        const botonRect = divAnimacionOjo.current.getBoundingClientRect();
+        const coordenadaYOjo = botonRect.top;
+        const coordenadaXBoton = botonRect.left;
+    
+        // Calcular la posición relativa del ratón respecto al botón
+        const pupilaRect = divAnimacionPupila.current.getBoundingClientRect();
+        const mitadDelLargoPupila = pupilaRect.width * 0.48; //Ajusta este porcentaje si sientes que no esta bien centrada la pupila
+        const mitadDelAltoPupila = pupilaRect.height * 0.5; //Tambien lo puedes ajustar
+        const coordenadaXRelativa = (e.clientX - coordenadaXBoton) - mitadDelLargoPupila;
+        const coordenadaYRelativa = (e.clientY - coordenadaYOjo) - mitadDelAltoPupila;
+        
         gsap.to(divAnimacionPupila.current, {
             x: coordenadaXRelativa,
             y: coordenadaYRelativa
         });
-
-
-
-
-    }
+    };
+    
 
     const mouseFueraBoton = () => {
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.47);
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.385); //La multiplicacion sirve para ajustar en base al porcentaje del css
         const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.1);
 
         tl.startTime(2);
@@ -93,9 +88,10 @@ export function Boton({ valorBoton, accion }) {
             onClick={accion}
         >
             {valorBoton}
-            <div ref={divAnimacionOjo}>
+            <div ref={divAnimacionOjo} className="seleccionado">
                 <div
                     ref={divAnimacionPupila}
+                    className="cursor"
                 >
                 </div>
             </div>

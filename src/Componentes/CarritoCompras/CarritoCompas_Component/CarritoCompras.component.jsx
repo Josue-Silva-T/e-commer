@@ -79,7 +79,9 @@ export function CarritoCompras() {
         <article className='contenedor_pago'>
           <h2>Total a pagar: {totalPagar}</h2>
           {mostrandoTicket()}
-          <button className="boton boton-comprar" disabled={totalPagar === 0}>Comprar</button>
+          <Boton
+            valorBoton={"Probaremos el boton"}
+          />
         </article>
       </section>
 
@@ -93,10 +95,8 @@ export function CarritoCompras() {
         </div>
       </section>
 
-        
-      <Boton 
-        valorBoton={"Probaremos el boton"}
-      />
+
+
     </div>
   );
 }
