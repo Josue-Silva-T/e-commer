@@ -3,44 +3,23 @@ import { gsap } from "gsap";
 
 import './Boton.component.css';
 
-export function Boton({ valorBoton }) {
+export function Boton({ valorBoton, accion }) {
     const divAnimacionOjo = useRef(null);
     const divAnimacionPupila = useRef(null);
 
     let tl = gsap.timeline();
 
-    const iniciarPupila = (e) => {
+    const iniciarPupila = () => {
         if (tl.isActive()) {
             tl.kill(divAnimacionPupila);
             tl.kill(divAnimacionOjo);
         }
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.51);
-        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.30);
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.47);
+        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.1);
 
         gsap.from(divAnimacionPupila.current, {
             x: anchoOjo,
             y: 0
-        });
-
-    }
-
-    const mouseEnBoton = (e) => {
-
-        divAnimacionOjo.current.classList.add('seleccionado')
-        divAnimacionPupila.current.classList.add('cursor')
-
-        const coordenadaYOjo = divAnimacionOjo.current.getBoundingClientRect().top;
-
-
-        const coordenadaXMouse = e.clientX;
-        const coordenadaYMouse = e.clientY;
-
-        const coordenadaXRelativa = coordenadaXMouse;
-        const coordenadaYRelativa = coordenadaYMouse - coordenadaYOjo;
-
-        gsap.to(divAnimacionPupila.current, {
-            x: coordenadaXRelativa,
-            y: coordenadaYRelativa
         });
 
         gsap.to(divAnimacionOjo.current, {
@@ -51,11 +30,36 @@ export function Boton({ valorBoton }) {
 
     }
 
-    const mouseFueraBoton = () => {
-        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.51);
-        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.30);
+    const mouseEnBoton = (e) => {
 
-        tl.startTime(1);
+        divAnimacionOjo.current.classList.add('seleccionado')
+        divAnimacionPupila.current.classList.add('cursor')
+
+        const coordenadaYOjo = divAnimacionOjo.current.getBoundingClientRect().top;
+        const coordenadaXPupila = divAnimacionPupila.current.getBoundingClientRect().width / 4;
+
+
+        const coordenadaXMouse = e.clientX;
+        const coordenadaYMouse = e.clientY;
+
+        const coordenadaXRelativa = coordenadaXMouse - coordenadaXPupila;
+        const coordenadaYRelativa = coordenadaYMouse - coordenadaYOjo;
+
+        gsap.to(divAnimacionPupila.current, {
+            x: coordenadaXRelativa,
+            y: coordenadaYRelativa
+        });
+
+
+
+
+    }
+
+    const mouseFueraBoton = () => {
+        const anchoOjo = (divAnimacionOjo.current.getBoundingClientRect().width * 0.47);
+        const alturaOjo = (divAnimacionOjo.current.getBoundingClientRect().height * 0.1);
+
+        tl.startTime(2);
 
         tl.to(divAnimacionPupila.current, {
             x: anchoOjo,
@@ -66,12 +70,12 @@ export function Boton({ valorBoton }) {
             top: "50%",
             height: 0,
             duration: 0.5,
-            delay : 0
+            delay: 0
         })
 
         tl.to(divAnimacionPupila.current, {
             duration: 0.5,
-            delay : 0
+            delay: 0
         })
 
     }
@@ -86,7 +90,7 @@ export function Boton({ valorBoton }) {
             onMouseEnter={iniciarPupila}
             onMouseMove={mouseEnBoton}
             onMouseLeave={mouseFueraBoton}
-
+            onClick={accion}
         >
             {valorBoton}
             <div ref={divAnimacionOjo}>
